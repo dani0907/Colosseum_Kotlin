@@ -11,6 +11,8 @@ import kr.co.tjoeun.colosseum_kotlin.databinding.ActivityEditReplyBinding;
 
 public class EditReplyActivity extends BaseActivity {
 
+    String topicTitle;
+
     ActivityEditReplyBinding binding;
 
     @Override
@@ -28,6 +30,8 @@ public class EditReplyActivity extends BaseActivity {
 
     @Override
     public void setValues() {
+        topicTitle = getIntent().getStringExtra("topicTitle");
+        binding.topicTitleTxt.setText(topicTitle);
 
     }
 }
