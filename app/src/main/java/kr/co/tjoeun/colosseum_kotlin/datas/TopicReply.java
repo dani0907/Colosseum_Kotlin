@@ -99,8 +99,11 @@ public class TopicReply {
 
 //    현재 시간 대비 작성시간이 얼마나 오래되었나를 체크해서, 다른 양식으로 출력
 
+    public
     public String getFormattedTimeAgo() {
 //        1. 작성한 시간(!)으로부터 현재시간(!)이 얼마나 흘렀나? => 그 둘의 차이
+
+
 
         long writeTime = this.createdAt.getTimeInMillis(); // 작성 시간
         long now = System.currentTimeMillis(); // 현재 시간을 long으로 바로 리턴.
