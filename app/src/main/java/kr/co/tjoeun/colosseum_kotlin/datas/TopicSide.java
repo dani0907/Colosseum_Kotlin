@@ -8,6 +8,7 @@ public class TopicSide {
     private int id;
     private int topicId;
     private String title;
+    private int voteCount;
 
     public static TopicSide getTopicSideFromJson(JSONObject json) {
         TopicSide ts = new TopicSide();
@@ -16,6 +17,7 @@ public class TopicSide {
             ts.id = json.getInt("id");
             ts.topicId = json.getInt("topic_id");
             ts.title = json.getString("title");
+            ts.voteCount = json.getInt("vote_count");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -45,5 +47,13 @@ public class TopicSide {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public int getVoteCount() {
+        return voteCount;
+    }
+
+    public void setVoteCount(int voteCount) {
+        this.voteCount = voteCount;
     }
 }
