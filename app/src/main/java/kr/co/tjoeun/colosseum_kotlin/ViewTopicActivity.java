@@ -53,13 +53,14 @@ public class ViewTopicActivity extends BaseActivity {
 
                     for(TopicSide ts : mTopic.getSideList()){
                         if(ts.getId() == mTopic.getMySideId()){
-                            mySideTitle = ts.getTitle()
+                            mySideTitle = ts.getTitle();
                         }
                     }
 
                     Intent myIntent = new Intent(mContext, EditReplyActivity.class);
                     myIntent.putExtra("topicTitle",mTopic.getTitle());
                     myIntent.putExtra("sideTilte",mySideTitle);
+                    myIntent.putExtra("topicId",mTopic.getId());
                     startActivity(myIntent);
                 }
 
