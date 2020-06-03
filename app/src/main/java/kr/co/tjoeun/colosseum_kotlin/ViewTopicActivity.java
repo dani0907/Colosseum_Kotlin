@@ -151,9 +151,12 @@ public class ViewTopicActivity extends BaseActivity {
             Toast.makeText(mContext, "잘못된 접근입니다.", Toast.LENGTH_SHORT).show();
             finish();
         }
+    }
 
-       getTopicFromServer();
-        
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getTopicFromServer();
     }
 
     void getTopicFromServer(){
