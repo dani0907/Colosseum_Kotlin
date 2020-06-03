@@ -12,7 +12,6 @@ public class TopicReply {
 
     private int id;
     private String content;
-    private String side;
     private User writer;
     private Calendar createdAt = Calendar.getInstance(); // 작성 일시 기록
 
@@ -22,7 +21,6 @@ public class TopicReply {
         try {
             tr.id = jsonObject.getInt("id");
             tr.content = jsonObject.getString("content");
-            tr.side = jsonObject.getString("side");
 
 
 //            댓글 json 안에 있는 user Json 추출
@@ -69,7 +67,6 @@ public class TopicReply {
     public TopicReply(int id, String content, String side) {
         this.id = id;
         this.content = content;
-        this.side = side;
     }
 
     public int getId() {
@@ -86,14 +83,6 @@ public class TopicReply {
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    public String getSide() {
-        return side;
-    }
-
-    public void setSide(String side) {
-        this.side = side;
     }
 
     public User getWriter() {
