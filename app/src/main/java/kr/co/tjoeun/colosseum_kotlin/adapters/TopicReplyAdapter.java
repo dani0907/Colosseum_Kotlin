@@ -19,15 +19,19 @@ import kr.co.tjoeun.colosseum_kotlin.datas.TopicReply;
 public class TopicReplyAdapter extends ArrayAdapter<TopicReply> {
 
 
+//    주제에서 선택 가능한 진영들의 id들이 담긴 배열열
+   int[] topicSideIds = new int[2];
+
     Context mContext;
     List<TopicReply> mList;
     LayoutInflater inf;
 
-    public TopicReplyAdapter(@NonNull Context context, int resource, @NonNull List<TopicReply> objects) {
+    public TopicReplyAdapter(@NonNull Context context, int resource, @NonNull List<TopicReply> objects,int[] sideIdArr) {
         super(context, resource, objects);
         mContext = context;
         mList = objects;
         inf = LayoutInflater.from(mContext);
+        topicSideIds = sideIdArr;
     }
 
     @NonNull
