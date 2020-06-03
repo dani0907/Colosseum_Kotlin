@@ -6,7 +6,9 @@ import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import kr.co.tjoeun.colosseum_kotlin.BaseActivity;
@@ -41,6 +43,30 @@ public class EditReplyActivity extends BaseActivity {
                     @Override
                     public void onResponse(JSONObject json) {
                         Log.d("댓글 달기 응답.",json.toString());
+
+                        try {
+                            int code = json.getInt("code");
+                            if(code ==200){
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(mContext, "의견이 등록되었습니다.", Toast.LENGTH_SHORT).show();
+                                        finish();
+                                    }
+                                });
+                            }
+                            else{
+                                final String message = json.getString("message");
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
                 });
             }
