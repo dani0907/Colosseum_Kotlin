@@ -203,15 +203,7 @@ public class ViewTopicActivity extends BaseActivity {
         mTopicReplyAdapter = new TopicReplyAdapter(mContext,R.layout.topic_reply_list_item, mTopic.getReplyList(),topicSides);
         binding.replyListView.setAdapter(mTopicReplyAdapter);
 
-        int mySideIndex = 1;
-
-        for(int i=0; i<mTopic.getSideList().size(); i++){
-
-            if(mTopic.getSideList().get(i).getId()==mTopic.getMySideId()){
-                mySideIndex = i;
-            }
-
-        }
+        int mySideIndex = mTopic.getMySideIndex();
 
         if(mySideIndex ==-1){
             binding.voteToFirstSideBtn.setEnabled(true);

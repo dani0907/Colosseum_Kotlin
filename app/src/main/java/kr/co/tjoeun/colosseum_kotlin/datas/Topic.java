@@ -103,4 +103,18 @@ public class Topic implements Serializable {
     public void setMySideId(int mySideId) {
         this.mySideId = mySideId;
     }
+
+    public int getMySideIndex(){
+        int mySideIndex = 1;
+
+        for(int i=0; i<this.sideList.size(); i++){
+
+            if(this.sideList.get(i).getId()==this.mySideId){
+                mySideIndex = i;
+            }
+
+        }
+
+        return mySideIndex;
+    }
 }
