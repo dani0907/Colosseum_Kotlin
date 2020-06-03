@@ -35,6 +35,14 @@ public class Topic implements Serializable {
 //            따라오는 의견 목록을 추가 파싱
 
             if(!jsonObject.isNull("replies")){
+                JSONArray replies = jsonObject.getJSONArray("replies");
+
+                for(int i =0; i<replies.length();i++){
+                    JSONObject reply = replies.getJSONObject(i);
+                    TopicReply tr = TopicReply.getTopicReplyFromJson(reply);
+                    topic.replyList.add(tr);
+
+                }
 
             }
 
