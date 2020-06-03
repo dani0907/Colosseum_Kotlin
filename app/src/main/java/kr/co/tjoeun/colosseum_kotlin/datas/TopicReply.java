@@ -11,6 +11,7 @@ import java.util.TimeZone;
 public class TopicReply {
 
     private int id;
+    private int side_id;
     private String content;
     private User writer;
     private Calendar createdAt = Calendar.getInstance(); // 작성 일시 기록
@@ -20,6 +21,7 @@ public class TopicReply {
 
         try {
             tr.id = jsonObject.getInt("id");
+            tr.side_id = jsonObject.getInt("side_id");
             tr.content = jsonObject.getString("content");
 
 
@@ -98,8 +100,18 @@ public class TopicReply {
     }
 
 //    현재 시간 대비 작성시간이 얼마나 오래되었나를 체크해서, 다른 양식으로 출력
+        public void setCreatedAt(Calendar createdAt) {
+    this.createdAt = createdAt;
+}
 
-    public
+    public int getSide_id() {
+        return side_id;
+    }
+
+    public void setSide_id(int side_id) {
+        this.side_id = side_id;
+    }
+
     public String getFormattedTimeAgo() {
 //        1. 작성한 시간(!)으로부터 현재시간(!)이 얼마나 흘렀나? => 그 둘의 차이
 

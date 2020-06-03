@@ -21,7 +21,7 @@ public class TopicReplyAdapter extends ArrayAdapter<TopicReply> {
 
 
 //    주제에서 선택 가능한 진영들의 id들이 담긴 배열열
-   int[] topicSideArr = new int[2];
+    TopicSide[] topicSideArr;
 
     Context mContext;
     List<TopicReply> mList;
@@ -33,6 +33,7 @@ public class TopicReplyAdapter extends ArrayAdapter<TopicReply> {
         mList = objects;
         inf = LayoutInflater.from(mContext);
         topicSideArr = sideArr;
+
     }
 
     @NonNull
