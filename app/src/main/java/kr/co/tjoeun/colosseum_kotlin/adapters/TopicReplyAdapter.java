@@ -15,6 +15,7 @@ import java.util.List;
 
 import kr.co.tjoeun.apipractice_20200527.R;
 import kr.co.tjoeun.apipractice_20200527.datas.TopicReply;
+import kr.co.tjoeun.colosseum_kotlin.datas.TopicReply;
 
 public class TopicReplyAdapter extends ArrayAdapter<TopicReply> {
 
