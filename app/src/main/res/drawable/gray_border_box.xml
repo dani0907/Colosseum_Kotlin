@@ -28,5 +28,31 @@
         </layer-list>
 
     </item>
+    <item>
+        <layer-list>
+            <item>
+                <shape
+                    android:shape="rectangle">
+                    <solid
+                        android:color="@color/gray"/>
+
+                </shape>
+            </item>
+            <item
+                android:top="1dp"
+                android:left="1dp"
+                android:right="1dp"
+                android:bottom="1dp">
+                <shape
+                    android:shape="rectangle">
+                    <solid
+                        android:color="@color/lightGray"/>
+
+                </shape>
+            </item>
+
+        </layer-list>
+
+    </item>
 
 </selector>
