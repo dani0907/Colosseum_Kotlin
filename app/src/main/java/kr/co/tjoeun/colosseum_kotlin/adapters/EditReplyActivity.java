@@ -42,7 +42,7 @@ public class EditReplyActivity extends BaseActivity {
         binding.postBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String input = binding.contentExt.getText().toString();
+                String input = binding.contentEdt.getText().toString();
                 if(replyId == -1){
                     ServerUtil.postRequestReply(mContext, topicId, input, new ServerUtil.JsonResponseHandler() {
                         @Override
@@ -106,6 +106,9 @@ public class EditReplyActivity extends BaseActivity {
 
         if(replyId != -1){
             setTitle("의견 수정하기");
+            binding.postBtn.setText("의견 수정하기");
+
+            binding.contentEdt.setText(getIntent().getStringExtra("content"));
         }
         else{
             setTitle("의견 등록하기");
