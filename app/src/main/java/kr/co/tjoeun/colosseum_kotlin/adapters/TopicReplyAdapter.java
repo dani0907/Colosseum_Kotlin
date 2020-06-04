@@ -95,9 +95,22 @@ public class TopicReplyAdapter extends ArrayAdapter<TopicReply> {
 
         if(data.isMyLike()){
 
+            likeCountBtn.setBackgroundResource(R.drawable.red_border_box);
+            likeCountBtn.setTextColor(Color.RED);
+
         }
         else{
+            likeCountBtn.setBackgroundResource(R.drawable.gray_border_box);
+            likeCountBtn.setTextColor(mContext.getResources().getColor(R.color.gray));
+        }
 
+        if(data.isMyDislike()){
+            dislikeCountBtn.setBackgroundResource(R.drawable.blue_border_box);
+            dislikeCountBtn.setTextColor(Color.BLUE);
+        }
+        else{
+            dislikeCountBtn.setBackgroundResource(R.drawable.gray_border_box);
+            dislikeCountBtn.setTextColor(mContext.getResources().getColor(R.color.gray));
         }
 
 //        좋아요 버튼 누른 처리
