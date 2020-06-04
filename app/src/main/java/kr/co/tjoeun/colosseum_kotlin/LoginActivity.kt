@@ -4,7 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_login.*
+import kr.co.tjoeun.colosseum_kotlin.datas.User
 import kr.co.tjoeun.colosseum_kotlin.utils.ContextUtil
+import kr.co.tjoeun.colosseum_kotlin.utils.GlobalData
 import kr.co.tjoeun.colosseum_kotlin.utils.ServerUtil
 import org.json.JSONObject
 
@@ -36,6 +38,10 @@ class LoginActivity : BaseActivity() {
                     val token = data.getString("token")
 
                     ContextUtil.setLoginUserToken(mContext, token)
+
+                    val user = data.getJSONObject("user")
+                    val userObj = User.getUserFromJson(user)
+                    GlobalData.loginUser = loginUser
 
                     val myIntent = Intent(mContext, MainActivity::class.java)
                     startActivity(myIntent)
