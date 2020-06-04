@@ -105,7 +105,7 @@ public class Topic implements Serializable {
     }
 
     public int getMySideIndex(){
-        int mySideIndex = 1;
+        int mySideIndex = -1;
 
         for(int i=0; i<this.sideList.size(); i++){
 
