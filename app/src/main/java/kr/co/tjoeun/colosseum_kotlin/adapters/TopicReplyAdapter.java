@@ -139,7 +139,6 @@ public class TopicReplyAdapter extends ArrayAdapter<TopicReply> {
                                     notifyDataSetChanged();
                                 }
                             });
-                            notifyDataSetChanged();
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -171,7 +170,6 @@ public class TopicReplyAdapter extends ArrayAdapter<TopicReply> {
                                     notifyDataSetChanged();
                                 }
                             });
-                            notifyDataSetChanged();
 
                         } catch (JSONException e) {
                             e.printStackTrace();
